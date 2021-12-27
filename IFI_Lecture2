@@ -1,0 +1,226 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture2
+ * 
+ * @author L.C. 
+ * @version 1.0
+ * 
+ * This Class prints "HI IFI" with stars and spaces.
+ */
+public class Lecture22
+{
+    public static String space()
+    {
+    
+        String space = " ";
+        return space;
+    
+    
+    }
+    
+    
+    public static String star()
+    {
+    
+        String star = "*";
+        return star;
+    
+    }
+    
+    public static String twice(String a)
+    {
+    
+        String twiceString = a + a;
+        return twiceString;
+    
+    }
+    
+    public static String thrice(String a)
+    {
+    
+        String thriceString = a + a + a;
+        return thriceString;
+    
+    }
+    
+    public static String fourTimes(String a)
+    {
+    
+        String fourString = a + a + a + a;
+        return fourString;
+    
+    }
+    
+    public static String fiveTimes(String a)
+    {
+    
+        String fiveString = a + a + a + a + a;
+        return fiveString;
+    
+    }
+    
+    public static String h1()
+    {
+    
+        String h1_s = star() + twice(space()) + star();
+        return h1_s;
+    
+    }
+    
+    public static String h2()
+    {
+    
+        String h2_s = h1();
+        return h2_s;
+    
+    }
+    
+    public static String h3()
+    {
+    
+        String h3_s = fourTimes(star());
+        return h3_s;
+    
+    }
+    
+    public static String h4()
+    {
+        
+        String h4_s = h1();
+        return h4_s;
+    
+    }
+    
+    public static String h5()
+    {
+    
+        String h5_s = h1();
+        return h5_s;
+    
+    }
+    
+    public static String i1()
+    {
+    
+        String i1_s = fiveTimes(star());
+        return i1_s;
+    
+    }
+    
+    public static String i2()
+    {
+    
+        String i2_s = twice(space()) + star() + twice(space());
+        return i2_s;
+    
+    }
+    
+    public static String i3()
+    {
+    
+        String i3_s = i2();
+        return i3_s;
+    
+    }
+    
+    public static String i4()
+    {
+        
+        String i4_s = i2();
+        return i4_s;
+    
+    }
+    
+    public static String i5()
+    {
+    
+        String i5_s = i1();
+        return i5_s;
+    
+    }
+    
+    public static String f1()
+    {
+    
+        String f1_s = fourTimes(star());
+        return f1_s;
+    
+    }
+    
+    public static String f2()
+    {
+    
+        String f2_s = star() + thrice(space());
+        return f2_s;
+    
+    }
+    
+    public static String f3()
+    {
+    
+        String f3_s = thrice(star()) + space();
+        return f3_s;
+    
+    }
+    
+    public static String f4()
+    {
+        
+        String f4_s = f2();
+        return f4_s;
+    
+    }
+    
+    public static String f5()
+    {
+    
+        String f5_s = f2();
+        return f5_s;
+    
+    }
+    
+    
+    
+    public static String hiIfi1()
+    {
+            String firstRow = h1() + twice(space()) + i1() + fiveTimes(space()) + i1() + twice(space()) + f1() + twice(space()) + i1();
+            return firstRow; 
+    }
+    
+    public static String hiIfi2()
+    {
+           String secondRow = h2() + twice(space()) + i2() + fiveTimes(space()) + i2() + twice(space()) + f2() + twice(space()) + i2();
+           return secondRow; 
+    }
+    
+    public static String hiIfi3()
+    {
+            String thirdRow = h3() + twice(space()) + i3() + fiveTimes(space()) + i3() + twice(space()) + f3() + twice(space()) + i3();
+            return thirdRow; 
+    }
+    
+    public static String hiIfi4()
+    {
+           String forthRow = h4() + twice(space()) + i4() + fiveTimes(space())+ i4() + twice(space()) + f4() + twice(space()) + i4();
+           return forthRow; 
+    }
+    
+    public static String hiIfi5()
+    {
+           String fifthRow = h5() + twice(space()) + i5() + fiveTimes(space())+ i5() + twice(space()) + f5() + twice(space()) + i5();
+           return fifthRow; 
+    }
+       
+    public static void main(String[] args)
+    {
+    
+        System.out.println("Hello Kitty!");
+        
+        System.out.println(hiIfi1());
+        System.out.println(hiIfi2());
+        System.out.println(hiIfi3());
+        System.out.println(hiIfi4());
+        System.out.println(hiIfi5());
+        
+    }
+}
