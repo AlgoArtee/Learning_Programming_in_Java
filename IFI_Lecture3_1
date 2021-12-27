@@ -1,0 +1,63 @@
+/**
+ * 
+ * HSB - IFI - Programming 1
+ * Lecture3_1 
+ * 
+ * Methode cuberoot, die cubic root berechnet.
+ * @author L.C.
+ * @version V 1.0
+ */
+
+public class Lecture31
+{
+
+    public static boolean isInbetween(int number, int lower, int upper)
+    {
+    
+        return number >= lower && number < upper;
+    
+    }
+    
+
+    public static int cubic(int number)
+    {
+        
+        int cubic_number;
+        return cubic_number = number*number*number;
+        
+    }
+    
+    
+    public static int cubeRoot(int number)
+    {
+        int candidate = 1;
+        int squareroot = 1;
+        boolean found = false;
+        
+        while(!found)
+        {
+            found = isInbetween(number, cubic(candidate), cubic(candidate + 1));
+            if(found)
+            {
+                squareroot = candidate;
+            }
+            candidate = candidate + 1;
+        }
+        
+        return squareroot;
+    }
+    
+    
+    public static void main(String[] args)
+    {
+    
+        int number=64;
+        
+        int cubic = cubeRoot(number);
+        
+        
+        System.out.println("The cubic root of " + number + " is " + cubic);    
+    
+    }
+    
+}
