@@ -1,0 +1,52 @@
+/**
+ *
+ * HSB - IFI - Programming 1
+ * Lecture4_1 
+ * 
+ * @author L.C.
+ * @version V1.0
+ */
+public class Lecture4_1
+{
+
+    public static double convertToKCA(double kiloJoule)
+    {
+        double kcal = kiloJoule * 0.239;
+        
+        return kcal;
+    
+    }
+    
+    public static double convertToKJ(double kiloCal)
+    {
+    
+        double kj = kiloCal * 4.1868;
+        
+        return kj;
+    
+    }
+    
+    public static void main(String[] args)
+    {
+    
+        double kCal = 505;
+        double kCalToKjoule = convertToKJ(kCal);
+        
+        double kJoule = 3050;
+        double kjouleToKcal = convertToKCA(kJoule);
+
+        double chocolateKcalories = 520;
+        double chocolateKjoule = convertToKJ(chocolateKcalories);
+        
+        double bottleWineKjoule =  2730;
+        double bottleWineKcal = convertToKCA(bottleWineKjoule);
+        double glasWineKcal = bottleWineKcal / 3.5;
+        
+        
+        System.out.println( kCal + " kiloCalories are " + kCalToKjoule + " kiloJoule.");
+        System.out.println( kJoule + " kiloJoules are " + kjouleToKcal + " kiloCalories.");
+        System.out.println( "A chocolate bar has " + chocolateKcalories + " kiloCalories, meaning " + chocolateKjoule + " kiloJoule.");
+        System.out.println( "A glas of mulled wine has " + glasWineKcal + " kiloCalories.");
+    }
+
+}
