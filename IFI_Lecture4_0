@@ -1,0 +1,61 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture4_0 
+ * 
+ * A method "factorial", which takes a long number "n" and computes n!
+ * A method "binomi", which takes a long number "n" and a long number "k" and computes: (n k) = n! / k!·(n−k)!
+ * 
+ * 
+ * @author L.C.
+ * @version V 1.0
+ */
+public class Lecture4_0
+{
+    public static long factorial(long number)
+    {
+    
+        int i,factorialNumber=1;
+        for(i=1;i<=number;i++)
+        {    
+          factorialNumber=factorialNumber*i;    
+        }    
+  
+        return factorialNumber;
+    }
+    
+    
+    public static long binomi(long n, long k)
+    {
+    
+         
+        float binomialCoeff = factorial(n) / (factorial(k) * factorial(n-k));
+        
+        long intBinomialCoeff = (long) binomialCoeff;
+        
+        return intBinomialCoeff;
+    }
+    
+   
+    public static void main(String[] args)
+    {
+    
+        long firstNumber=8;
+        
+        long secondNumber=4;
+               
+        long binomialCoefficient=binomi(firstNumber, secondNumber);
+        
+        if (firstNumber < secondNumber)
+        {
+        
+            System.out.println("The first number must be larger than or equal to the second number!");
+        
+        }
+        else
+        {
+            System.out.println("The binomial coefficient of " + firstNumber + " and " + secondNumber + " is " + binomialCoefficient);
+        }
+            
+    }
+    
+}
