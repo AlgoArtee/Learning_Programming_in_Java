@@ -1,0 +1,86 @@
+/**
+ * 
+ * HSB - IFI - Programming 1
+ * Lecture4_2
+ * 
+ * Different methods for different computations
+ * 
+ * @author L.C. 
+ * @version V1.0
+ */
+public class Lecture4_2
+{
+    
+    public static int power (int n, int e)
+    {
+    
+        int i = 1, powerNumber = n;
+        
+        while (i<e)
+        {    
+          powerNumber=powerNumber*n;
+          i++;
+        }    
+  
+        return powerNumber;
+    
+    
+    
+    }
+    
+    
+    public static int why()
+    
+    {
+    
+        int n = 1;
+        
+        while (n-1 < n)
+        {    
+            n = n + 1;
+        }    
+  
+        return n;
+    
+    
+    }
+
+    
+    public static double computation1() 
+    {
+    
+        double numberC1 = 0.362*100/100;
+        return numberC1;
+    
+    
+    }
+    
+    
+    public static double computation2()
+    {
+    
+    
+        double numberC2 = 5.6+5.8;
+        return numberC2;
+    
+    }
+    
+    
+    
+    public static void main(String[] args)
+    {
+    
+        int number = 2;
+        int exponent = 33;
+        
+        int resultNumber = power(number,exponent);
+        int result2 = why();
+        double result3 = computation1();
+        double result4 = computation2();
+
+        System.out.println( "The first result is " + resultNumber);
+        System.out.println( "The second result is " + result2);
+        System.out.println( "The third result is " + result3);
+        System.out.println( "The forth result is " + result4);
+    }
+}
