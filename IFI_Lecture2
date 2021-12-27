@@ -1,13 +1,13 @@
 /**
  * HSB - IFI - Programming 1
- * Lecture2.1
+ * Lecture2_0
  * 
  * @author L.C. 
  * @version 1.0
  * 
  * This Class prints "HI IFI" with stars and spaces.
  */
-public class Lecture22
+public class Lecture2_0
 {
     public static String space()
     {
