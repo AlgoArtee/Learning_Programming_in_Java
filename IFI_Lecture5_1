@@ -1,0 +1,78 @@
+/**
+ *
+ * HSB - IFI - Programming 1
+ * Lecture5_1
+ * 
+ * Code to print a Xmas Tree of variable height
+ * 
+ * @author L.C.
+ * @version V1.0
+ */
+
+public class Lecture5_1
+{
+
+    public static void treeRow(int index, int height)
+    {
+    
+        System.out.print((" ".repeat(height - index)) + "/" + (" ".repeat((index-1)*2)) + "\\");
+        System.out.print("\n");
+    
+    }
+    
+    
+    public static void treeBase(int height)
+    {
+        System.out.print("_".repeat(height-2) + "    " + "_".repeat(height-2));
+        System.out.print("\n");
+    
+    }
+    
+    
+    public static void treeTrunk(int height)
+    {
+    
+        int trunkHeight = (height / 2) - 2;
+        
+        for (int i=1; i<=trunkHeight; i++)
+        {
+            System.out.print(" ".repeat(height-2) + "|  |" + " ".repeat(height-2));
+            System.out.print("\n");
+        
+        }
+    
+    }
+    
+    
+    public static void trunkBase(int height)
+    {
+    
+            System.out.print(" ".repeat(height-2) + " __ " + " ".repeat(height-2));
+            System.out.print("\n");
+    
+    }
+    
+    
+    public static void christmasTree(int height)
+    {
+        for (int i=1; i<=height; i++)
+        {
+            treeRow(i, height);
+        
+        }
+        
+        treeBase(height);
+        treeTrunk(height);
+        trunkBase(height);
+    
+    }
+
+    
+    
+    public static void main(String[] args)
+    {
+    
+        int height = 20;
+        christmasTree(height);
+    }
+}
