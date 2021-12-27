@@ -1,14 +1,14 @@
 /**
  * 
  * HSB - IFI - Programming 1
- * Lecture3_1 
+ * Lecture3_0 
  * 
  * Methode cuberoot, die cubic root berechnet.
  * @author L.C.
  * @version V 1.0
  */
 
-public class Lecture31
+public class Lecture3_0
 {
 
     public static boolean isInbetween(int number, int lower, int upper)
