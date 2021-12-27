@@ -1,0 +1,39 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture3_1 
+ * 
+ * 
+ * A method "factorial", which takes a number "n" and computes the factorial: n! = 1 · 2 · 3···n−1 · n
+ * Funtions reliably only up to the number 16.
+ * 
+ * @author L.C.
+ * @version V 1.0
+ */
+public class Lecture3_1
+{
+    public static int factorial(int number)
+    {
+    
+        int i,factorialNumber=1;
+        for(i=1;i<=number;i++)
+        {    
+          factorialNumber=factorialNumber*i;    
+        }    
+        
+        return factorialNumber;
+    }
+    
+   
+     public static void main(String[] args)
+    {
+    
+        int number=17;
+        
+        int factorial_no = factorial(number);
+        
+        
+        System.out.println("The factorial of " + number + " is " + factorial_no);    
+    
+    }
+    
+}
