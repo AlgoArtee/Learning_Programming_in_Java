@@ -1,0 +1,49 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture1 
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ */
+public class Lecture1
+{
+    
+    public static int square(int x)
+    {
+    
+        return x * x;
+    
+    }
+    
+    
+    
+    public static int binomial(int a, int b)
+    {
+    
+        //  a^2 + 2ab + b^2
+        return square(a) + 2*a*b + square(b);
+    
+    }
+    
+    
+    
+    public static void main(String[] args)
+    {
+    
+        System.out.println("Hello Kitty!");
+        
+        int x = 5;
+        
+        int y = square(x);
+        
+        int z = square(y);
+        
+        
+        System.out.println("Das Quadrat von " + x + " ist " + y + " und dessen Quadrat ist " + z);
+        
+        int result1 = binomial(2,3);
+        
+        System.out.println(result1);
+        
+    }
+}
