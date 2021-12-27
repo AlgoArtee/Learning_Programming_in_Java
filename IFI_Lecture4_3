@@ -1,0 +1,53 @@
+/**
+ * 
+ * HSB - IFI - Programming 1
+ * Lecture4_3
+ * 
+ * Methods for converting the type of a variable
+ * 
+ * @author L.C. 
+ * @version V1.0
+ */
+public class Lecture4_3
+{
+
+    public static int convertToInt(double d)
+    {
+    
+    int intD = (int) d;
+    
+    return intD;
+    
+    }
+    
+    
+    
+    public static short convertToShort(int i) 
+    {
+    
+        short shortI = (short) i; 
+        return shortI;
+    
+    }
+    
+    public static void main(String[] args)
+    {
+    
+    
+        double doubleNumber = 34.5;
+        int doubleToInt = convertToInt(doubleNumber);
+        
+        float floatNumber =  3.4F;
+        int floatToInt = convertToInt(floatNumber);
+    
+        int intNumber = 40000;
+        short intToShort = convertToShort(intNumber);
+
+        System.out.println( "Double " + doubleNumber + " is " + doubleToInt + " as integer.");
+        System.out.println( "Float " + floatNumber + " is " + floatToInt + " as integer.");
+        System.out.println( "Int " + intNumber + " is " + intToShort + " as short.");
+        
+    
+    }
+    
+}
