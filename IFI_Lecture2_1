@@ -1,13 +1,13 @@
 /**
  * HSB - IFI - Programming 1
- * Lecture2_2
+ * Lecture2_1
  * 
  * @author L.C.
  * @version 1.0
  * 
  * Prints "HI NATHA" with stars and spaces.
  */
-public class Lecture23
+public class Lecture2_1
 {
     public static String space()
     {
