@@ -1,0 +1,41 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture3_2
+ * 
+ * @author L.C.
+ * @version V1.0
+ */
+public class Lecture3_2
+{
+
+    
+    public static boolean isEven(int number)
+    {
+    
+        boolean even = number%2 == 0;   
+        return even;
+    }
+    
+
+    
+    
+    public static void main(String[] args)
+    {
+    
+        int number=763;
+        
+        if (isEven(number) == true)
+            {
+            
+                System.out.println("Number " + number + " is even.");
+            
+            }
+            else
+            {
+                System.out.println("Number " + number + " is not even.");
+            
+            }
+    
+    }
+    
+}
