@@ -1,0 +1,32 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 8.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ */
+
+public class Hochschulangehoerige
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    protected String vorname;
+    protected String nachname;
+    protected String adresse;
+
+    /**
+     * Konstruktor für Objekte der Klasse Hochschulangehoerige
+     */
+    public Hochschulangehoerige(String vorname, String nachname, String adresse)
+    {
+        // Instanzvariable initialisieren
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.adresse = adresse;
+    }
+
+
+    public String toString()
+    {
+        return "Die Hochschulangehörige heißt " + vorname + " " + nachname + " und wohnt in " + adresse;
+    }
+}
