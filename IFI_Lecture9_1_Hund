@@ -1,0 +1,32 @@
+
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 9.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Hund, die von Haustier erbt. Schreiben Sie einen Konstruktor, der die Variablen
+ * name und pflegebedarf übergeben bekommt. Rufen Sie den Superkonstruktor auf und setzen Sie als
+ * tierart immer den String Hund. Schreiben Sie eine Methode streicheln, die den String Wuff auf der
+ * Konsole ausdruckt.
+ */
+public class Hund extends Haustier
+{
+    /**
+     * Konstruktor für Objekte der Klasse Hund
+     */
+    public Hund(String name, int pflegebedarf, Person besitzer)
+    {
+        super(name, "Hund", pflegebedarf, besitzer);
+        this.pflegebedarf = pflegebedarf;
+    }
+    
+
+
+    public void streicheln()
+    {
+        System.out.println("Wuff!");
+    }
+}
