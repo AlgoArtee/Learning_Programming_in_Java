@@ -1,0 +1,52 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 6 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Uebungsgruppe, die zwei Attributvariablen studentin1 und studentin2 vom Typ Studentin hat.
+ * • Erstellen Sie einen Konstruktor, der die beiden Attributvariablen übergeben bekommt und diese setzt.
+ * • Implementieren Sie get-Methoden für die beiden Attributvariablen.
+ * • Erstellen Sie eine Methode hausaufgabeGemacht(), die bei beiden Studentin die entsprechende Methode aufruft.
+ * • Implementieren Sie eine Methode toString(), die einen String zurückgibt. Verwenden Sie dabei die to-
+ *   String() Methode der Klasse Studentin.
+ */
+ 
+public class Uebungsgruppe
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private Studentin studentin1;
+    private Studentin studentin2;
+    
+    public Uebungsgruppe(Studentin studentin1, Studentin studentin2)
+    {
+        this.studentin1 = studentin1;
+        this.studentin2 = studentin2;
+    
+    }
+    
+    
+    public Studentin getStudentin1()
+    {
+        return studentin1;
+    }
+    
+    public Studentin getStudentin2()
+    {
+        return studentin2;
+    }
+
+    public void hausaufgabenGemacht()
+    {
+        studentin1.hausaufgabenGemacht();
+        studentin1.hausaufgabenGemacht();
+    }
+    
+    public String toString()
+    {
+    
+        return "Uebungsgruppe: " + studentin1.toString() + "\n" + studentin2.toString();
+    }
+}
