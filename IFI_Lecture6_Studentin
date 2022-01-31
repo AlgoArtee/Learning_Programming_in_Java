@@ -1,0 +1,82 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 6 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Studentin. Diese Klasse soll folgende Eigenschaften haben:
+ * • Als Attributvariablen wird ein String name verwendet. Zusätzlich gibt es Integer Werte für die matrikelnummer,
+ *   hausaufgaben und wissen
+ * • Erstellen Sie einen Konstruktor, der als Parameter den Namen und die Matrikelnummer hat. Setzen Sie
+ *   die Variable wissen und hausaufgaben auf 0.
+ * • Implementieren Sie get-Methoden für alle Werte.
+ * • Erstellen Sie eine Methode toString(), die alle Werte als String zurück gibt.
+ * • Erstellen Sie eine Methode vorlesungBesucht(), die den Wert wissen um 2 erhöht.
+ * • Erstellen Sie eine Methode hausaufgabenGemacht(), die hausaufgaben um 1 erhöht und wissen um 3.
+ * 
+ */
+public class Studentin
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private String name;
+    private int matrikelnummer;
+    private int wissen;
+    private int hausaufgaben;
+    
+    
+    public Studentin(String name, int matrikelnummer)
+    {
+     this.name = name;
+     this.matrikelnummer = matrikelnummer;
+     
+     wissen = 0;
+     this.hausaufgaben = 0;
+    
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+    
+    
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    
+    public int getMatrikelnummer()
+    {
+        return matrikelnummer;
+    }
+    
+    public int getWissen()
+    {
+        return wissen;
+    }
+    
+    
+    public void vorlesungBesucht()
+    {
+        this.wissen = this.wissen + 2;
+    
+    }
+    
+    public void hausaufgabenGemacht()
+    {
+        this.hausaufgaben += 1;
+        this.wissen = this.wissen + 3;
+    
+    }
+    
+    
+    public String toString()
+    {
+        return "Die Studentin heißt " + name + " (" + matrikelnummer + ") hat ein Wissen von " + wissen + " und " + hausaufgaben +" Hausaufgaben gemacht.";
+    
+    }
+    
+}
