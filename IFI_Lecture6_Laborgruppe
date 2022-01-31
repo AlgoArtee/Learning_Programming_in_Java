@@ -1,0 +1,56 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 6 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do: * 
+ * Erstellen Sie eine Klasse Laborgruppe, die drei Attributvariablen uebungsgruppe1, uebungsgruppe2 und uebungsgruppe3
+ * vom Typ Uebungsgruppe hat.
+ * • Erstellen Sie einen Konstruktor, der die Attributvariablen übergeben bekommt und setzt.
+ * • Erstellen Sie get-Methoden für die Attributvariablen.
+ * • Erstellen Sie wieder eine toString()- Methode.
+ * Erweitern Sie die main-Methode und erstellen Sie ein Objekt labor vom Typ Laborgruppe. Drucken Sie die
+ * Information mit System.out.println(labor) aus.
+ * 
+ */
+public class Laborgruppe
+{
+    // Instanzvariablen
+    private Uebungsgruppe uebungsgruppe1;
+    private Uebungsgruppe uebungsgruppe2;
+    private Uebungsgruppe uebungsgruppe3;
+
+    /**
+     * Konstruktor für Objekte der Klasse Laborgruppe
+     */
+    public Laborgruppe(Uebungsgruppe uebungsgruppe1, Uebungsgruppe uebungsgruppe2, Uebungsgruppe uebungsgruppe3)
+    {
+        // Instanzvariable initialisieren
+        this.uebungsgruppe1 = uebungsgruppe1;
+        this.uebungsgruppe2 = uebungsgruppe2;
+        this.uebungsgruppe3 = uebungsgruppe3;
+    }
+    
+    public Uebungsgruppe getU1()
+    {
+     return uebungsgruppe1; 
+    }
+    
+    public Uebungsgruppe getU2()
+    {
+     return uebungsgruppe2; 
+    }
+    
+    public Uebungsgruppe getU3()
+    {
+     return uebungsgruppe3; 
+    }
+
+ 
+    public String toString()
+    {
+        return "Uebungsgruppe 1 besteht aus " + uebungsgruppe1.toString() + ", Uebungsgruppe 2 besteht aus " + uebungsgruppe2.toString() + ", Uebungsgruppe 3 besteht aus " + uebungsgruppe3.toString();
+    }
+}
