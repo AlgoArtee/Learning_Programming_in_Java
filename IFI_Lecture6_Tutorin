@@ -1,0 +1,59 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 6 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Tutorin, die als Attributvariable einen String name hat und eine Variable labor vom
+ * Typ Laborgruppe.
+ * • Erstellen Sie einen Konstruktor, der die Attributvariablen übergeben bekommt und setzt.
+ * • Erstellen Sie eine Methode zeichneErsteUebungsgruppeAb(), die sich die erste Übungsgruppe aus dem
+ * Objekt labor nimmt und die Methode hausaufgabeGemacht() aufruft.
+ * • Implementieren Sie analog eine Methode für das abzeichnen der zweiten und dritten Übungsgruppe.
+ * • Erstellen Sie eine toString()-Methode.
+ */
+public class Tutorin
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private String name ;
+    private Laborgruppe labor;
+
+    /**
+     * Konstruktor für Objekte der Klasse Tutorin
+     */
+    public Tutorin(String name, Laborgruppe labor)
+    {
+        // Instanzvariable initialisieren
+        this.name = name;
+        this.labor = labor;
+    }
+
+
+    public void zeichneErsteUebungsgruppeAb()
+    {
+        labor.getU1().getStudentin1().hausaufgabenGemacht();
+        labor.getU1().getStudentin2().hausaufgabenGemacht();
+    }
+    
+
+    public void zeichneZweiteUebungsgruppeAb()
+    {
+        labor.getU2().getStudentin1().hausaufgabenGemacht();
+        labor.getU2().getStudentin2().hausaufgabenGemacht();
+    }
+    
+    public void zeichneDritteUebungsgruppeAb()
+    {
+        labor.getU3().getStudentin1().hausaufgabenGemacht();
+        labor.getU3().getStudentin2().hausaufgabenGemacht();
+    }
+    
+    
+    public String toString()
+    {
+    
+     return "Die Tutorin " + name + "betreut die Laborgruppe " + labor; 
+    }
+}
