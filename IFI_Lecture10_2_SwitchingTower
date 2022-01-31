@@ -1,0 +1,116 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 10.2 - Polymorphy and Interfaces in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * 
+ * Die Bahn stellt ihre Weichen von einer analogen Steuerung auf eine digitale Steuerung um. Die analogen
+ * Weichen, die entriegelt werden müssen, bevor sie nach links oder rechts gestellt werden, werden mit Hilfe
+ * eines Adapters digitalisiert. Dieser nimmt die Entriegelung vor und schaltet den Zustand um, so wie es bei den
+ * digitalen Weichen der Fall ist.
+ * Schreiben Sie eine Klasse SwitchingTower für das Schaltwerk und implementieren Sie dort die statische
+ * Methode switchPath, die ein Array vonWeichen switches und ein Boolean-Array path der gleichen Länge
+ * übergeben bekommt. Die Weichen sollen so geschaltet werden, wie in path angegeben ist, bei false
+ * soll die Weiche nach links geschaltet werden, bei true soll die Weiche nach rechts geschaltet werden.
+ * Schreiben Sie die statische Methode printSwitches, die ein Array von Weichen übergeben bekommt und
+ * die Zustände mit Hilfe der for-each Schleife ausdruckt. In der main-Methode sollen zwei Boolean-Arrays
+ * path1 und path2 der Länge 6 mit beliebigen aber unterschiedlichen Werten erzeugt werden. Erzeugen
+ * Sie ein Array für die Weichen der Länge 6 mit drei digitalen und drei digitalisierten, analogen Weichen.
+ * Rufen Sie für das Array und den beiden Pfaden die Methode switchPath auf und rufen Sie anschließend
+ * die Methode printSwitches auf.
+ */
+public class SwitchingTower
+{
+    // Instanzvariablen
+    
+
+    /**
+     * Konstruktor für Objekte der Klasse SwitchingTower
+     */
+    public SwitchingTower()
+    {
+        // Instanzvariable initialisieren
+        
+    }
+
+    /**
+     * Method switchPath
+     */
+    public static Switch[] switchPath(Switch switches[], boolean path[])
+    {
+      
+        Switch new_states[] = new Switch[switches.length];
+        
+        for (int i = 0; i<switches.length; i++)
+        {
+            
+            new_states[i] = switches[i];
+            
+            if (switches[i].isRight() != path[i])
+            {
+                new_states[i].switching();
+            
+            }
+        
+        }
+        
+        return(new_states);
+    }
+    
+    
+    public static void printSwitches(Switch switches[])
+    {
+    
+        for (int i =0; i<switches.length;i++)
+        {
+            if (switches[i].isRight() == true)
+            {
+                System.out.println("Switch no. " + i + " is switched to right.");
+            }
+            else
+            {
+                System.out.println("Switch no. " + i + " is switched to left.");            
+            }
+        
+        }
+    
+    
+    }
+    
+    
+    
+    public static void main(String[] args)
+    {
+    
+        boolean path1[] = {true, false, false, true, false, true};
+        boolean path2[] = {false, true, false, false, true, true};
+        
+        ManualSwitch four = new ManualSwitch();
+        ManualSwitch five = new ManualSwitch();
+        ManualSwitch six = new ManualSwitch();
+        
+        
+        DigitalSwitch one_digi = new DigitalSwitch();
+        DigitalSwitch two_digi = new DigitalSwitch();
+        DigitalSwitch three_digi = new DigitalSwitch();
+        
+        Digitalisation four_ana_digi = new Digitalisation(four);
+        Digitalisation five_ana_digi = new Digitalisation(five);
+        Digitalisation six_ana_digi = new Digitalisation(six);
+        
+        Switch switches[] = {one_digi, two_digi, three_digi, four_ana_digi, five_ana_digi, six_ana_digi}; 
+    
+
+        Switch[] new_switches = switchPath(switches, path1);
+        printSwitches(new_switches);
+        
+        System.out.println();
+        
+        Switch[] new_switches2 = switchPath(switches, path2);
+        printSwitches(new_switches2);              
+    
+    }
+}
