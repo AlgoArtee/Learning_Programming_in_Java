@@ -1,0 +1,56 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 9.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Person, die aus den Attributen name, vorname vom Typen String besteht. Schreiben
+ * Sie einen Konstruktor, der diese Werte übergeben bekommt und setzt und schreiben Sie get-und
+ * set-Methoden für diese Variablen. Schreiben Sie außerdem eine toString- Methode.
+ */
+public class Person
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private String name;
+    private String vorname;
+    
+    
+    public Person(String name, String vorname)
+    {
+     this.name = name;
+     this.vorname = vorname;
+    
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+    
+    public String getVorName()
+    {
+        return vorname;
+    }
+    
+    
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    
+    public void setVorName(String vorname)
+    {
+        this.vorname = vorname;
+    }
+
+    
+    public String toString()
+    {
+    return vorname + " " + name;
+    
+    }
+    
+}
