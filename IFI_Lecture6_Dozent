@@ -1,0 +1,50 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 6 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Dozent, die als Attributvariablen einen String name hat.
+ * • Implementieren Sie einen Konstruktor, der die Attributvariable übergeben bekommt und setzt.
+ * • Erstellen Sie eine Methode pruefungBestanden(Studentin studentin), die das Wissen der Studentin abfragt
+ *   und überprüft ob das Wissen größer als 40 ist. Wenn das der Fall ist, soll true zurückgegeben
+ *   werden, ansonsten false.
+ * 
+ */
+public class Dozent
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private String name;
+
+    /**
+     * Konstruktor für Objekte der Klasse Dozent
+     */
+    public Dozent(String name)
+    {
+        // Instanzvariable initialisieren
+        this.name = name;
+    }
+
+    /**
+     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
+     * 
+     * @param  y    ein Beispielparameter für eine Methode
+     * @return        die Summe aus x und y
+     */
+    public boolean pruefungBestanden(Studentin studentin)
+    {
+        // tragen Sie hier den Code ein
+        if (studentin.getWissen() > 40)
+        {
+            return true;
+        }
+        else
+        {
+        
+            return false;
+        
+        }
+    }
+}
