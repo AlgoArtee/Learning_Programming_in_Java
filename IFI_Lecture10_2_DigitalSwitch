@@ -1,0 +1,59 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 10.2
+ * 
+ * @author L.C.
+ * @version V1.0
+ * 
+ * To Do:
+ * Schreiben Sie eine Klasse DigitalSwitch, die das Interface Switch implementiert mit einem Boolean
+ * toRight als Attributvariablen. Schreiben Sie einen Konstruktor und setzen Sie toRight auf false.
+ */
+public class DigitalSwitch implements Switch
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private Boolean toRight;
+
+    /**
+     * Konstruktor für Objekte der Klasse DigitalSwitch
+     */
+    public DigitalSwitch()
+    {
+        // Instanzvariable initialisieren
+        toRight = false;
+    }
+
+    /**
+     * switching method
+     */
+    public void switching()
+    {
+        if (toRight == true)
+        {
+            toRight = false;
+        }
+        else
+        {
+            toRight = true;
+        }
+    }
+    
+    
+    /**
+     * isRight method
+     */
+    
+    public Boolean isRight()
+    {
+         if (toRight == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+    }
+    
+            
+}
