@@ -1,0 +1,198 @@
+
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 8.2 - Arrays in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Die Methode findMax soll den größtenWert in dem Array/ der Matrix zurückgeben. find soll überprüfen, ob der
+ * int Wert value in dem Array/ der Matrix enthalten ist. In der Methode concat soll das übergebene Array an das
+ * vorhandene aneinandergefügt werden. Die Methode convertToArray soll eine Matrix in ein Array umwandeln,
+ * indem die Zeilen hintereinander angehängt werden. Verwenden Sie die neue- for Schleife und rufen Sie eigene
+ * Methoden auf, wann immer es sich anbietet.
+ */
+public class Lecture8_2
+{
+    public static int findMax (int[] array)
+    {
+    
+    int max = 0;
+    
+    for(int i=0; i<array.length; i++)
+    {
+    
+        if(max < array[i])
+        {
+            max = array[i];
+        }
+     
+       
+    }
+    
+    
+    return max;
+    
+    }
+    
+    public static int findMax (int[][] matrix )
+    {
+    
+    
+    int[] maxValueFromEchRow = new int[matrix.length];
+    
+    for(int row = 0; row < matrix.length; row++)
+    {
+        int rowMax=findMax(matrix[row]);
+        maxValueFromEchRow[row] = rowMax;
+        
+    }
+    
+    int max = findMax(maxValueFromEchRow);
+    
+    
+    return max;
+    }
+    
+    
+    public static boolean find (int[] array, int value )
+    {
+    
+        boolean found = false;
+        
+        for(int i = 0; i<array.length;i++)
+        {
+        
+            if(array[i]==value)
+            {
+            
+            found = true;
+            
+            }
+        
+        }
+    
+        return found;
+    }
+    
+    public static boolean find (int[][] matrix, int value)
+    {
+        boolean found = false;
+        
+        for(int row = 0; row < matrix.length; row++)
+        {
+            boolean foundInRow=find(matrix[row],value);
+            
+            if(foundInRow==true)
+            {
+            
+                found = foundInRow;
+            
+            }
+            
+        }
+    
+        return found;
+    }
+
+
+    public static int[] concat (int[] array1, int[] array2) 
+    {
+        int sumLengths = array1.length+array2.length;
+        int[] newArray = new int[sumLengths];
+    
+        for(int i=0; i<array1.length; i++)
+        {
+        
+                newArray[i] = array1[i];
+            
+        
+        }
+        
+        
+        int j = 0;
+        for(int i=array1.length; i<sumLengths;i++)
+        {
+        
+            newArray[i] = array2[j];
+            j++;
+        
+        }
+    
+        return newArray;
+    }
+    
+    
+    
+    public static int[] convertToArray (int[][] matrix )
+    {
+        int[] newArray = concat(matrix[0],matrix[1]);
+        
+        for(int row = 2; row < matrix.length; row++)
+        {
+        
+            newArray = concat(newArray,matrix[row]);
+        
+        
+        }
+    
+        return newArray;
+    }
+    
+    
+    
+    
+    public static void main(String[] args)
+    {
+    
+        int[] array1 = {12,44,5,67,89,34,66,3,101};
+        int result1 = findMax(array1);
+        System.out.println(result1);
+        
+        int[][] matrix1 = {{12,44,5},{67,89,34},{66,3,101,1003}};
+        int result2 = findMax(matrix1);
+        System.out.println(result2);
+        
+        boolean result3=find(array1,89);
+        System.out.println(result3);
+        
+        boolean result4=find(array1,1);
+        System.out.println(result4);
+        
+        
+        boolean result5=find(matrix1,89);
+        System.out.println(result5);
+        
+        boolean result6=find(matrix1,1);
+        System.out.println(result6);
+    
+        
+        int[] array2 = {13,44,6,68,90,35,67,4,102};
+    
+        int[] concatArray1 = concat(array1,array2);
+        
+        System.out.print("{");
+        for(int i=0; i<concatArray1.length;i++)
+        {
+            System.out.print(concatArray1[i] + " ");
+        }
+        
+        System.out.print("}");
+        
+        System.out.println();
+        
+        int[][] matrix2 = {{12,44,5,6,7,1,0},{67,89,34,13,24,35},{66,3,101,1003}};
+        
+        int[] concatArray2 = convertToArray(matrix2);
+        
+        System.out.print("{");
+        for(int i=0; i<concatArray2.length;i++)
+        {
+            System.out.print(concatArray2[i] + " ");
+        }
+        
+        System.out.print("}");
+        
+    }
+}
