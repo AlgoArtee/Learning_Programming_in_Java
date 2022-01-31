@@ -1,0 +1,38 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 8.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * In dieser Aufgabe sollen sowohl Mitarbeiterinnen und Studentinnen modelliert werden. Vergessen Sie javadoc nicht.
+ * 1. Erstellen Sie eine Klasse Hochschulangehoerige mit einem String vorname, einem String nachname und
+ *    einer Adresse adresse . Schreiben Sie einen Konstruktor, der die Werte übergeben bekommt und setzt.
+ *    Schreiben Sie ausserdem eine toString-Methode.
+ * 2. Leiten Sie von der Klasse Hochschulangehoerige die Klassen Studentin und Mitarbeiterin ab. Die Studentin
+ *    bekommt zusätzlich eine Matrikelnummer in dem Konstruktor übergeben, die Mitarbeiterin eine
+ *    Personalnummer, die in entsprechenden Variablen gespeichert werden und in einer entsprechenden Methode
+ *    zurückgegeben werden. Überschreiben Sie die toString-Methode der Oberklasse und rufen Sie in
+ *    der neuen Implementierung die toString-Methode der Oberklasse auf.
+ * Erzeugen Sie einige Objekte vom Typen Hochschulangehoerige, Studentin und Mitarbeiterin.
+ */
+public class Main8_1
+{
+
+
+    public static void main(String[] args)
+    {
+        Hochschulangehoerige ha1 = new Hochschulangehoerige("Vima","Wellny", "Str01");
+        System.out.println(ha1.toString());
+        
+        Studentin8_1 s1 = new Studentin8_1("Ali", "Sem", "Str21", 123456);
+        System.out.println(s1.toString());
+        Studentin8_1 s2 = new Studentin8_1("Mey", "Maddy", "Str22", 123457);
+        System.out.println(s2.toString());
+        
+        Mitarbeiterin8_1 ma1 = new Mitarbeiterin8_1("Sigi","Sol","Str33",3444);
+        System.out.println(ma1.toString());
+        
+    }
+}
