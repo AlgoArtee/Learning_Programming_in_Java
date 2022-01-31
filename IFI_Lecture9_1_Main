@@ -1,0 +1,51 @@
+
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 9.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Schreiben Sie in der Klasse Main die main-Methode. Erstellen Sie eine Katze Frieda, die der Person
+ * Günter Güntersen gehört und einen Pflegebarf von 2 hat. Im Laufe der Zeit wird Frieda älter und Günter
+ * Güntersen gibt die Katze während seines Urlaubs an die Hundebesitzerin Gertraut Gertraudela mit dem
+ * Hund Bello mit einem Pflegebedarf 8. Nach dem Urlaub nimmt Günter die Katze Frieda wieder zurück.
+ */
+public class Main91
+{
+    
+    
+    public static void main(String[] args)
+    {
+    
+        Person gg = new Person("Günter","Güntersen");
+        Person gg1 = new Person("Gertraut", "Gertraudela");
+        
+        Katze kitty = new Katze("Kitty",2,gg);
+        System.out.println(kitty.toString());
+        
+        Hund bello = new Hund("Bello",8,gg1);
+        System.out.println(bello.toString());
+        
+        
+        
+        kitty.aelterWerden();
+        System.out.println(kitty.toString());
+        
+        kitty.besitzerWechsel(gg1);
+        System.out.println(kitty.toString());
+        
+        kitty.besitzerWechsel(gg);
+        System.out.println(kitty.toString());
+    
+        // Exercise 10.1
+        Haustier ht1 = kitty;
+        kitty.streicheln();
+        
+        Haustier ht2 = bello;
+        bello.streicheln();
+    
+    
+    }
+}
