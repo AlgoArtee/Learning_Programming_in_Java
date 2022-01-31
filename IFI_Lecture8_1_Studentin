@@ -1,0 +1,46 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 8.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ */
+public class Studentin8_1 extends Hochschulangehoerige
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private int matrikelnummer;
+
+    
+    public Studentin8_1(String vorname, String nachname, String adresse, int matrikelnummer)
+    {
+     super(vorname, nachname, adresse);
+     this.matrikelnummer = matrikelnummer;
+    
+    }
+
+    public String getName()
+    {
+        return nachname;
+    }
+    
+    
+    public void setName(String name)
+    {
+        this.nachname = nachname;
+    }
+    
+    
+    public int getMatrikelnummer()
+    {
+        return matrikelnummer;
+    }
+    
+    
+    
+    public String toString()
+    {
+        return "Die Studentin heißt " + vorname + " " + nachname + " und hat die Matrikelnummer " + matrikelnummer + ". Sie wohnt in " + adresse;
+    
+    }
+    
+}
