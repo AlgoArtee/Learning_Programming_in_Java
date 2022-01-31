@@ -1,0 +1,182 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 7 - Arrays in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * 7.1 (Arrays)
+ * Analog zu Aufgabe 5.1 soll das große 1x1 berechnet werden. Diesmal sollen aber die Ergebnisse nicht ausgedruckt
+ * werden, sondern in eine Matrix mit 20x30 Stellen geschrieben werden. Schreiben Sie also eine statische
+ * Methode big1Times1 die eine zweidimensionale int-Matrix zurückgibt in der in Zeile i und Spalte j der Wert
+ * i*j steht. Welche Multiplikation wird in der letzten Zeile und Spalte verwendet?
+ *
+ * 7.2 (Arrays1)
+ * Schreiben Sie eine statische Methode pascal, die eine Zahl n übergeben bekommt. Diese Methode soll eine
+ * zweidimensionale int-Matrix zurückgeben mit n-Zeilen. Dabei soll die erste Zeile 1 Position haben, die zweite
+ * Zeile 2 Positionen und die Zeile n n Positionen (also ein Dreieck). Schreiben Sie in der i-ten Zeile und jten
+ * Spalte den Wert i *j. Sie können erstmal dafür die Methode binomi (Aufgabe 4.1) verwenden. Zur Übung
+ * empfiehlt es sich aber das Pascal’sche Dreieck direkt zu implementieren: Das Pascal’sche Dreieck berechnet
+ * sich wie folgt:
+ * An erster und letzter Stelle einer jeden Zeile steht eine 1. Die anderen Einträge einer beliebigen Zeile i und
+ * einer Spalte j ergeben sich aus der Summe der Einträge in Zeile i􀀀1 und Spalte j􀀀1 und der Zeile i􀀀1 und j;
+ */
+public class Lecture7
+{
+    public static int[][] big1Times1_easy(int[][] multiplicationTable_1)
+    {
+        int[][] mT_0 = multiplicationTable_1;
+        
+        for(int row = 0; row < multiplicationTable_1.length; row++)
+        {
+            for(int column = 0; column < multiplicationTable_1[row].length; column++)
+            {
+                mT_0[row][column] = (row+1) * (column+1);
+                System.out.print(mT_0[row][column] + "\t");
+            }
+            
+            System.out.println();
+        }
+        
+        return mT_0;
+    }
+    
+    
+    public static int[][] big1Times1_weird(int[][] multiplicationTable)
+    {
+        int[][] mT = multiplicationTable;
+        
+        for(int row = 1; row < multiplicationTable.length; row++)
+        {
+            for(int column = 1; column < multiplicationTable[row].length; column++)
+            {
+                mT[row-1][column-1] = row * column;
+                System.out.print(mT[row-1][column-1] + "\t");
+            }
+            
+       
+            System.out.println();
+        }
+        
+        
+        // Last column
+        for(int row = 1; row < multiplicationTable.length; row++)
+        {
+            int column = multiplicationTable[row].length - 1;
+            mT[row-1][column] = row * (column+1);
+        
+        }
+        
+        
+        // Last row
+        int row = multiplicationTable.length - 1;
+        for(int column = 1; column < multiplicationTable[row].length; column++)
+        {
+    
+            mT[row][column-1] = (row+1) * (column);
+        
+        }
+        
+        // Last Element
+        int column = multiplicationTable[row].length - 1;
+        mT[row][multiplicationTable[row].length - 1] = (row + 1) * (column + 1);
+        
+        return mT;
+    }
+    
+    
+    
+    
+    
+    public static int[][] pascal(int n)
+    {
+        int[][] matrixPascal = new int[n][];
+        
+        //matrixPascal[0][0] = 1;
+        
+        for(int row = 0; row < matrixPascal.length; row++)
+        {
+            
+            //matrixPascal[row] = new int[row];
+            
+            if (row == 0)
+            {
+                matrixPascal[row] = new int[]{1};
+                //System.out.print(matrixPascal[row][0] + "\t");
+                //System.out.println();
+            }
+            else if (row == 1)
+            {
+                matrixPascal[row] = new int[]{1, 1};
+                //System.out.print(matrixPascal[row][0] + "\t" + matrixPascal[row][1]);
+                //System.out.println();
+            }
+            else
+            {
+                matrixPascal[row] = new int[row+1];
+                matrixPascal[row][0] = 1;
+                //System.out.print(matrixPascal[row][0] + "\t");
+                  
+                for(int column = 1; column < matrixPascal[row].length-1; column++)
+                {
+                    //matrixPascal[row][column] = 1;
+                    matrixPascal[row][column] = matrixPascal[row-1][column-1] + matrixPascal[row-1][column];
+                    //System.out.print(matrixPascal[row][column] + "\t");
+                }
+                
+                matrixPascal[row][row] = 1;
+                //System.out.print(matrixPascal[row][row] + "\t");
+                
+                //System.out.println();
+            
+            
+            }  
+
+        }
+                
+        return matrixPascal;   
+    }
+    
+    
+    
+    
+    public static void print(int[][] matrixToPrint)
+    {    
+        for(int[] row : matrixToPrint)
+        {
+            
+            //System.out.print("This is a row: " + row);            
+            
+            for(int number : row)
+            {
+                System.out.print(number + "\t");
+            }
+            System.out.println();
+        }           
+    }
+    
+    
+    
+    
+    
+    
+    public static void main(String[] args){
+        
+        int[][] multiply = new int[20][30];
+        
+        //int[][] multiTab = big1Times1_0(multiply);
+        System.out.println();
+        System.out.println();
+        
+        int[][] multiplicationTable = big1Times1_weird(multiply);
+        
+        System.out.println();        
+        print(multiplicationTable);
+        
+        
+        //print(pascal(10));
+        
+        //System.out.println(“Minimum ist “ + minimum(feld));
+    }
+}
