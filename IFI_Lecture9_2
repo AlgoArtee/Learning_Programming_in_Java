@@ -1,0 +1,55 @@
+
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 9.2 - Switch Case
+ * 
+ * @author L.C.
+ * @version V1.0
+ */
+public class Lecture92
+{
+    
+    public static int switchMethod(int number)
+    {
+    
+    switch(number) 
+    {
+        case 4:
+        return 7;
+        
+        case 5:
+        return 7;
+        
+        case 21:
+        return 7;
+        
+        case 2:
+        return 9;
+
+        case 6:
+        return 9;
+   
+        default:
+        return 13;
+        }
+    
+  
+    }
+   
+    
+    
+    public static void main(String[] args)
+    {
+      
+        int result1 = switchMethod(6);
+        System.out.println("Result for 6 is " + result1);
+        
+        int result2 = switchMethod(13);
+        System.out.println("Result for 6 is " + result2);
+        
+        
+    }
+    
+    
+    
+}
