@@ -1,0 +1,100 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 9.1 - Inheritance in Java
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Haustier mit den Attributen name und tierart vom Typen String, einem int
+ * pflegebedarf (Eine Zahl zwischen 1-10) und einer Person besitzer. Schreiben Sie einen Konstruktor, der
+ * alle diese Werte übergeben bekommt und setzt. Schreiben Sie eine Methode aelterWerden, die den pflegebarf
+ * um 2 erhöht. Schreiben Sie außerdem eine Methode besitzerWechsel, die eine Person übergeben
+ * bekommt und den besitzer ändert. Schreiben Sie außerdem eine toString-Methode.
+ */
+public class Haustier
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    protected String name;
+    protected String tierart;
+    protected int pflegebedarf;
+    protected Person besitzer;
+    
+    
+    public Haustier(String name,String tierart, int pflegebedarf, Person besitzer)
+    {
+     this.name = name;
+     this.tierart = tierart;
+     this.pflegebedarf = pflegebedarf;
+     this.besitzer = besitzer;
+    
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+    
+    
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    public void setTierart(String tierart)
+    {
+        this.tierart = tierart;
+    }
+    
+    
+    public String getTierart()
+    {
+        return tierart;
+    }
+    
+    
+    public int getPflegebedarf()
+    {
+        return pflegebedarf;
+    }
+    
+   public void setPflegebedarf(int pflegebedarf)
+    {
+        this.pflegebedarf = pflegebedarf;
+    }
+    
+    public Person getBesitzer()
+    {
+        return besitzer;
+    }
+    
+    
+    public void aelterWerden()
+    {
+        this.pflegebedarf = this.pflegebedarf + 2;
+    
+    }
+    
+    public void lebensElexier()
+    {
+        this.pflegebedarf = 0;
+    
+    }
+    
+    public void besitzerWechsel(Person neuerBesitzer)
+    {
+        this.besitzer = neuerBesitzer;
+    
+    }
+    
+    
+    public String toString()
+    {
+    return "Das Haustier ist ein/e " + tierart + " mit dem Namen " + name + " und den Pflegebedarf von " + pflegebedarf +". Der Besitzer ist " + besitzer +".";
+    
+    }
+    
+    // Exercise 10.1
+    public void streicheln(){};
+    
+}
