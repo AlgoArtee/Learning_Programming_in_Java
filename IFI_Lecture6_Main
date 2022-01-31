@@ -1,0 +1,75 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 6 - Inheritance in Jave
+ * 
+ * @author L.C. 
+ * @version V 1.0
+ * 
+ * To Do:
+ * Erstellen Sie eine Klasse Main mit der main Methode. Erzeugen Sie in dieser mindestens 6 Objekte der Klasse
+ * Studentin von sich und ihren Kommilitoninnen. Drucken Sie die Information von allen Studentinnen mit
+ * Hilfe der toString()-Methode aus. Wenn Sie den Namen genauso gewählt haben kann das auch direkt mit System.
+ * out.println(studentin) geschehen.
+ * 
+ */
+public class Main61
+{
+    
+    
+    public static void main(String[] args)
+    {
+        Studentin one = new Studentin("Anna May", 100100);
+        Studentin two = new Studentin("Tila Tay", 100101);
+        Studentin three = new Studentin("Vera Vay", 100102);
+        Studentin four = new Studentin("Mary May", 100103);
+        Studentin five = new Studentin("Dela Day", 100104);
+        Studentin six = new Studentin("Fina Fay", 100105);
+        
+        
+        System.out.println(one);
+        System.out.println(one.toString());
+        
+        System.out.println(two);
+        System.out.println(three);
+        System.out.println(four);
+        System.out.println(five);
+        System.out.println(six);
+        
+        Uebungsgruppe uebungsgruppe1 = new Uebungsgruppe(one, two);
+        Uebungsgruppe uebungsgruppe2 = new Uebungsgruppe(three, four);
+        Uebungsgruppe uebungsgruppe3 = new Uebungsgruppe(five, six);
+        
+      
+        Laborgruppe labor = new Laborgruppe(uebungsgruppe1,uebungsgruppe2,uebungsgruppe3);
+        
+        Tutorin tutorin = new Tutorin("Maggie Rie", labor);
+        
+        for (int i = 0; i <= 15; i++)
+        {
+            tutorin.zeichneErsteUebungsgruppeAb();
+            tutorin.zeichneZweiteUebungsgruppeAb();
+            tutorin.zeichneDritteUebungsgruppeAb();
+        }
+        
+        System.out.println(two);
+        System.out.println(three);
+        System.out.println(four);
+        System.out.println(five);
+        System.out.println(six);
+        
+        Dozent dozent = new Dozent("Maritta Melgor");
+        
+        System.out.println(dozent.pruefungBestanden(one));
+        System.out.println(dozent.pruefungBestanden(two));
+        System.out.println(dozent.pruefungBestanden(three));
+        System.out.println(dozent.pruefungBestanden(four));
+        System.out.println(dozent.pruefungBestanden(five));
+        System.out.println(dozent.pruefungBestanden(six));
+        
+        
+    }
+    
+    
+    
+    
+}
