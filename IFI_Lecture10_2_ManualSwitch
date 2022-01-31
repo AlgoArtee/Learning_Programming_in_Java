@@ -1,0 +1,92 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 10.2
+ * 
+ * Class ManualSwitch - describes the methods for a manual switch of rails
+ * 
+ * 
+ * @author L.C.
+ * @version V1.0
+ * 
+ * To Do:
+ * Schreiben Sie eine Klasse ManualSwitch, die ein Boolean toRight und ein Boolean locked als Attributvariablen
+ * hat. Schreiben Sie einen Konstruktor, der locked auf true setzt und toRight auf false. Schreiben
+ * Sie die Methoden toRight, die die Variable toRight zurückgibt, die Methode unlock, die locked auf false
+ * setzt und die Methoden switchRight und switchLeft, die toRight je nachdem auf true oder false setzt,
+ * allerdings nur, wenn locked false ist. Nach jedem Umschalten wird locked automatisch auf true gesetzt.
+ */
+public class ManualSwitch
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private Boolean toRight;
+    private Boolean locked;
+
+    /**
+     * Konstruktor für Objekte der Klasse ManualSwitch
+     */
+    public ManualSwitch()
+    {
+        // Instanzvariable initialisieren
+        this.toRight = false;
+        this.locked = true;
+    }
+
+    /**
+     * Method toRight - returns the value of the toRight variable
+     */
+    public Boolean toRight()
+    {
+        
+        return toRight;
+    }
+    
+    /**
+     * Method unlock - sets the value of the locked variable to false
+     */
+    public void unlock()
+    {
+        
+        locked = false;
+    }
+    
+    /**
+     * Method switchRight - sets the value of the toRight variable to true, if locked == false
+     * The locked variable is then set to true.
+     */
+    public void switchRight()
+    {
+        
+        if (locked == false)
+        {
+            toRight = true;
+        } 
+        else
+        {
+            System.out.println("Please unlock system before switching right!");
+        }
+        
+        locked = true;
+    }
+    
+    
+    /**
+     * Method switchLeft - sets the value of the toRight variable to false, if locked == false
+     * The locked variable is then set to true.
+     */
+    public void switchLeft()
+    {
+        
+        if (locked == false)
+        {
+            toRight = false;
+        } 
+        else
+        {
+            System.out.println("Please unlock system before switching left!");
+        }
+        
+        locked = true;
+    }
+    
+    
+}
