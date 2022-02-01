@@ -1,0 +1,35 @@
+/**
+ * HSB - IFI - Programming 1
+ * Lecture 9.3 - Ternary Operator
+ * 
+ * @author L.C.
+ * @version V1.0
+ */
+public class Lecture93
+{
+    
+    
+    public static String even(int number)
+    {
+    
+    
+        String result = number%2==0 ? "gerade" : "ungerade";
+        return result;
+    
+    
+    }
+    
+        
+    public static void main(String[] args)
+    {
+      
+        String result1 = even(6);
+        System.out.println("Result for 6 is " + result1);
+        
+        String result2 = even(7);
+        System.out.println("Result for 7 is " + result2);
+        
+        
+        
+    }
+}
